@@ -6,7 +6,7 @@ package lab.zhang.risk.ast_compiler;
  */
 public interface ParsableContext<S, V> {
 
-    RoutableNode<S, V> getRootNode();
+    lab.zhang.risk.ast_compiler.RoutableNode<S, V> getRootNode();
 
-    RoutableNode<S, V> createNode(RoutableNode<S, V> parentNode, S index);
+    lab.zhang.risk.ast_compiler.RoutableNode<S, V> createNode(lab.zhang.risk.ast_compiler.RoutableNode<S, V> parentNode, S index);
 }

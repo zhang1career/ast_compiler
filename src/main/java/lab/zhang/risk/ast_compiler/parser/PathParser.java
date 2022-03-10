@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * @author zhangrj
  */
-public class PathParser<S, V> extends BaseParser<S, V> {
+public class PathParser<S, V> extends lab.zhang.risk.ast_compiler.parser.BaseParser<S, V> {
 
     @Override
     public ParsableContext<S, V> parse(List<NestableData<S, V>> dataList, ParsableContext<S, V> context) {

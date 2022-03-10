@@ -16,16 +16,24 @@ abstract public class BaseRouter<S, V> implements Routable<S, V> {
             return endTravel(node, context);
         }
 
+        prevIter(context);
         for (RoutableNode<S, V> child : node.getChildValueList()) {
-            preTravel(node, context);
+            prevTravel(node, context);
             dfs(child, context);
             postTravel(node, context);
         }
-
-        return endTravel(node, context);
+        RoutableContext<S, V> resultContext = postIter(context);
+        return endTravel(node, resultContext);
     }
 
-    protected void preTravel(RoutableNode<S, V> node, RoutableContext<S, V> context) {
+    protected void prevIter(RoutableContext<S, V> context) {
+    }
+
+    protected RoutableContext<S, V> postIter(RoutableContext<S, V> context) {
+        return context;
+    }
+
+    protected void prevTravel(RoutableNode<S, V> node, RoutableContext<S, V> context) {
         context.pushStep(node);
     }
 
